@@ -1,13 +1,9 @@
 package com.kln.module_usercenter.activity;
 
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.kln.common_base.base.BaseActivity;
-import com.kln.common_base.http.ArouterURL;
 import com.kln.module_usercenter.R;
-
 import java.util.concurrent.TimeUnit;
-
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -34,7 +30,7 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void initView() {
         //从0开始发射11个数字为：0-10依次输出，延时0s执行，每1s发射一次。
-        mdDisposable = Flowable.intervalRange(0, 11, 0, 1, TimeUnit.SECONDS)
+        mdDisposable = Flowable.intervalRange(0, 2, 0, 1, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext(new Consumer<Long>() {
                     @Override

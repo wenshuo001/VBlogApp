@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 28
 
@@ -64,5 +65,6 @@ dependencies {
     api rootProject.ext.dependencies['photoview']
     api rootProject.ext.dependencies['andpermission']
     api rootProject.ext.dependencies['eventbus']
+    api  rootProject.ext.dependencies['kotlin']
     //api rootProject.ext.dependencies['aspectj']
 }

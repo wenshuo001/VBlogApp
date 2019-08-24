@@ -48,4 +48,5 @@ dependencies {
     // arouter-compiler
     annotationProcessor rootProject.ext.dependencies['arouter-compiler']
     annotationProcessor rootProject.ext.dependencies['glide-compiler']
+
 }
