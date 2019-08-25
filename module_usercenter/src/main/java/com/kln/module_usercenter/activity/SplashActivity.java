@@ -1,7 +1,9 @@
 package com.kln.module_usercenter.activity;
 
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.kln.common_base.base.BaseActivity;
+import com.kln.common_base.http.ArouterURL;
 import com.kln.module_usercenter.R;
 import java.util.concurrent.TimeUnit;
 import io.reactivex.Flowable;
@@ -44,8 +46,8 @@ public class SplashActivity extends BaseActivity {
                         //倒计时完毕置为可点击状态
 //                        btnGetCode.setEnabled(true);
 //                        btnGetCode.setText("获取验证码");
-//                          ARouter.getInstance().build(ArouterURL.MainActivity).navigation();
-//                          finish();
+                          ARouter.getInstance().build(ArouterURL.LoginActivity).navigation();
+                          finish();
 
                     }
                 })
