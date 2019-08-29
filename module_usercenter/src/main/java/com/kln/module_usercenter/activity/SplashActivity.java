@@ -48,7 +48,6 @@ public class SplashActivity extends BaseActivity {
 //                        btnGetCode.setText("获取验证码");
                           ARouter.getInstance().build(ArouterURL.LoginActivity).navigation();
                           finish();
-
                     }
                 })
                 .subscribe();

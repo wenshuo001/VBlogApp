@@ -1,5 +1,6 @@
 package com.kln.module_usercenter.contract
 
+import com.kln.common_base.base.RespBean
 import com.kln.common_base.mvp.IView
 
 /**
@@ -10,7 +11,7 @@ import com.kln.common_base.mvp.IView
 interface LoginContract {
 
     interface View : IView {
-        fun loginSuccess(result: String)
+        fun loginSuccess(result: RespBean)
     }
 
     interface Presenter {

@@ -6,7 +6,7 @@ import com.kln.common_base.mvp.IView;
 
 import io.reactivex.observers.DisposableObserver;
 
-public abstract class BaseObserver<T> extends DisposableObserver<BaseResponse<T>> {
+public abstract class BaseObserver<T>  extends DisposableObserver<T> {
     private IView baseView;
 
     public BaseObserver() {
@@ -26,20 +26,18 @@ public abstract class BaseObserver<T> extends DisposableObserver<BaseResponse<T>
     }
 
     @Override
-    public void onNext(BaseResponse<T> baseResponse) {
+    public void onNext(T respone) {
         if (baseView != null) {
             baseView.hideLoading();
         }
-        int resultCode = baseResponse.getResultCode();
-        String errmsg = baseResponse.getResultMsg();
-        // 兼容 gank api
+        RespBean baseResponse=(RespBean)respone;
+        String errmsg = baseResponse.getMsg();
        // boolean isOk = !baseResponse.isError();
-        if (resultCode == 0 || resultCode == 200) {
-            T data = baseResponse.getData();
+        if (baseResponse.getStatus().equals("success")) {
             // 将服务端获取到的正常数据传递给上层调用方
-            onSuccess(data);
+            onSuccess(baseResponse);
         } else {
-            onError(new ApiException(resultCode, errmsg));
+            onError(new ApiException(200, errmsg));
         }
 //         else if (isOk) {   // gank api
 //            T data = baseResponse.getResults();
@@ -52,7 +50,7 @@ public abstract class BaseObserver<T> extends DisposableObserver<BaseResponse<T>
      *
      * @param data
      */
-    protected abstract void onSuccess(T data);
+    protected abstract void onSuccess(RespBean data);
 
     /**
      * 异常处理，包括两方面数据：

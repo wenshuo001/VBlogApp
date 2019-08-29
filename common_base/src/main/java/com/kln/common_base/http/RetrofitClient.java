@@ -15,7 +15,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 public class RetrofitClient {
 
-    private static final String API_HOST = "https://www.wanandroid.com/";
+    private static final String API_HOST = "http://192.168.0.111:8081/";
     private static RetrofitClient instance;
     private static OkHttpClient okHttpClient;
     private static Retrofit retrofit;

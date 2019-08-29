@@ -3,7 +3,9 @@ if (isRunAlone.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'//启用扩展支持直接使用ID
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
@@ -41,10 +43,19 @@ android {
             }
         }
     }
+
 }
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common_base')
- 
+
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
 }
+

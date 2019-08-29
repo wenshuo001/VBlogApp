@@ -87,7 +87,7 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/selector_login_btn_bg"
         android:stateListAnimator="@null"
-        tools:text="@string/login"
+        android:text="@string/login"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
