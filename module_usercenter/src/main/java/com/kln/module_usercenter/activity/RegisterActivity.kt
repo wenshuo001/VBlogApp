@@ -10,6 +10,7 @@ import com.kln.common_base.base.BaseMVPActivity
 import com.kln.common_base.base.RespBean
 import com.kln.common_base.util.ToastUtil
 import com.kln.module_usercenter.R
+import com.kln.module_usercenter.bean.RegisterInfoBean
 import com.kln.module_usercenter.contract.RegisterContract
 import com.kln.module_usercenter.presenter.RegisterPresenter
 import kotlinx.android.synthetic.main.activity_register.*
@@ -53,7 +54,8 @@ class RegisterActivity : BaseMVPActivity<RegisterPresenter>(), RegisterContract.
                 ToastUtil.show(mContext, "两次密码不相同")
                 return@setOnClickListener
             }
-            presenter.register(username, password, repassword)
+            val bean  = RegisterInfoBean(username,password,"",username)
+            presenter.register(bean)
         }
     }
 

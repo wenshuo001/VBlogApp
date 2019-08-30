@@ -74,7 +74,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
         android:paddingBottom="10dp"
-        tools:text="@string/goto_register"
+        android:text="@string/goto_register"
         android:textColor="@color/black_61"
         android:textSize="14sp" />
 

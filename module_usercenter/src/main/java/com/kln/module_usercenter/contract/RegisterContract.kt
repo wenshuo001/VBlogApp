@@ -2,6 +2,7 @@ package com.kln.module_usercenter.contract
 
 import com.kln.common_base.base.RespBean
 import com.kln.common_base.mvp.IView
+import com.kln.module_usercenter.bean.RegisterInfoBean
 
 /**
  * Creator :Wen
@@ -15,6 +16,6 @@ interface RegisterContract {
     }
 
     interface Presenter {
-        fun register(phone: String, password: String, repassword: String)
+        fun register(bean : RegisterInfoBean)
     }
 }
