@@ -15,7 +15,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 public class RetrofitClient {
 
-    private static final String API_HOST = "http://192.168.0.111:8081/";
+    //private static final String API_HOST = "http://192.168.0.111:8081/";
+    private static final String API_HOST = "http://120.79.214.74:8081/";
+
     private static RetrofitClient instance;
     private static OkHttpClient okHttpClient;
     private static Retrofit retrofit;

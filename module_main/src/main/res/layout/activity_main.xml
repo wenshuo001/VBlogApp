@@ -46,20 +46,11 @@
             android:button="@null"
             android:drawableTop="@drawable/selector_menu_project"
             android:gravity="center"
-            android:text="项目"
+            android:text="发表文章"
             android:textSize="10sp" />
 
 
-        <com.kln.common_base.widget.BadgeRadioButton
-            android:id="@+id/rb_system"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/selector_menu_system"
-            android:gravity="center"
-            android:text="体系"
-            android:textSize="10sp" />
+
 
 
         <com.kln.common_base.widget.BadgeRadioButton
